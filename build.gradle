@@ -48,7 +48,7 @@ configurations {
 
 def tags = (findProperty('tags') == null) ? 'not @exclude' : findProperty('tags') + ' and not @exclude'
 
-tasks.register('cucumber') {
+task cucumber() {
     description("Running Cucumber Test")
     dependsOn assemble, compileTestJava
     doLast {
