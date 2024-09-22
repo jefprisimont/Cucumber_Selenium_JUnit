@@ -87,5 +87,3 @@ my-project/
 
 ## 9. Test Results
 "Test results show that all test scenarios (positive, negative, and boundary) were successful (PASSED)."
-![test_result]()
-
