@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  build-web-ui-auto-DEMO:
     runs-on: ubuntu-latest
 
     steps:
