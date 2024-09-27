@@ -34,6 +34,10 @@ jobs:
     - name: Execute Test
       run: ./gradlew webTest
 
+    #execute gradlew command for running cucumber test
+    - name: Execute Test
+      run: ./gradlew apiTest
+
     #archive test result
     - name: Archive Test Result
       uses: actions/upload-artifact@v3.2.1-node20
