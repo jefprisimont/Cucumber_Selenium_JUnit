@@ -38,13 +38,21 @@ jobs:
     - name: Execute API Test
       run: ./gradlew apiTest
 
-    #archive test result
-    - name: Archive Test Result
+    #archive Web test result
+    - name: Archive Web Test Result
       uses: actions/upload-artifact@v3.2.1-node20
       if: always()
       with: 
-        name: Cucumber Report
-        path: reports
+        name: Cucumber Web Report
+        path: reports/Web
+
+    #archive API test result
+    - name: Archive API Test Result
+      uses: actions/upload-artifact@v3.2.1-node20
+      if: always()
+      with: 
+        name: Cucumber API Report
+        path: reports/API    
 
     # deploy to github pages
     - name: Deploy Report To Github Pages
