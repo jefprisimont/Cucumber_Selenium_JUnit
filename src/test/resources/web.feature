@@ -1,7 +1,6 @@
-@login
-Feature: Login
+Feature: Test Automation Web For Login Feature
 
-  @positive-case
+  @web
   Scenario: Login using valid username and password
     Given user is on login page
     And user input username with "standard_user"
@@ -9,7 +8,7 @@ Feature: Login
     When user click login button
     Then user is on homepage
 
-  @negative-case
+  @web
   Scenario: Login using empty password
     Given user is on login page
     And user input username with "standard_user"
@@ -17,7 +16,7 @@ Feature: Login
     When user click login button
     Then user able to see error message "Epic sadface: Password is required"
 
-  @boundary-case
+  @web
   Scenario: Login with a maximum password length
     Given user is on login page
     And user input username with "standard_user"

@@ -53,6 +53,23 @@ tasks.register('webTest') {
                     '--plugin', 'pretty',
                     '--plugin', 'html:reports/cucumber-report.html',
                     '--glue', 'com.jefri.stepdef',
+                    '--tags', "@web",
+                    'src/test/resources']
+        }
+    }
+}
+
+tasks.register('apiTest') {
+    dependsOn assemble, testClasses
+    doLast {
+        javaexec {
+            main = "io.cucumber.core.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            args = [
+                    '--plugin', 'pretty',
+                    '--plugin', 'html:reports/cucumber-report.html',
+                    '--glue', 'com.jefri.stepdef',
+                    '--tags', "@api",
                     'src/test/resources']
         }
     }
